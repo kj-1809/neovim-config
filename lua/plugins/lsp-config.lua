@@ -31,11 +31,18 @@ return {
 			lspconfig.tsserver.setup({
 				capabilites = capabilities,
 			})
+			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.prismals.setup({
+				capabilities = capabilities,
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n" , "<leader>e" , ':lua vim.diagnostic.open_float(0, {scope="line"})<CR>')
 		end,
 	},
 }

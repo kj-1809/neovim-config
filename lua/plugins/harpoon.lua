@@ -12,7 +12,7 @@ return {
 			ui.nav_file(1)
 		end)
 
-		vim.keymap.set("n", "<C-h>", function()
+		vim.keymap.set("n", "<C-g>", function()
 			ui.nav_file(2)
 		end)
 
