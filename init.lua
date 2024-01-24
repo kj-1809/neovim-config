@@ -11,6 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 require("vim-options")
 require("lazy").setup("plugins")
 require("snippets")
+
+-- vim.diagnostic.config({
+--     virtual_text = true
+-- })

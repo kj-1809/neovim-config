@@ -6,23 +6,23 @@ return {
 		config = function()
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>fd", builtin.live_grep, { desc = "Live grep" })
-			vim.keymap.set("n" , "<leader>ff" , builtin.find_files , { desc = "Find Files"})
+			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
 			vim.keymap.set(
 				"n",
 				"<leader>fh",
 				"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git'}})<cr>",
-				{desc = "Advanced Find Files"}
+				{ desc = "Advanced Find Files" }
 			)
-			vim.keymap.set("n" , "<leader>bf" , builtin.buffers , { desc = "Lists open buffers"})
+			vim.keymap.set("n", "<leader>bf", builtin.buffers, { desc = "Lists open buffers" })
 			require("telescope").setup({
 				defaults = {
 					file_ignore_patterns = {
-						'^Music/',
-						'^Library/',
-						'^Movies/',
-						'node_modules/'
-					}
-				}
+						"^Music/",
+						"^Library/",
+						"^Movies/",
+						"node_modules/",
+					},
+				},
 			})
 		end,
 	},

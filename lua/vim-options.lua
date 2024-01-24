@@ -19,16 +19,16 @@ vim.keymap.set("n", "ss", ":split<CR>")
 vim.keymap.set("n", "sv", ":vsplit<CR>")
 
 -- split screen mobility
-vim.keymap.set("n" , "<C-h>", ":wincmd h<CR>")
-vim.keymap.set("n" , "<C-j>", ":wincmd j<CR>")
-vim.keymap.set("n" , "<C-k>", ":wincmd k<CR>")
-vim.keymap.set("n" , "<C-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 
 -- split screen resizing
-vim.keymap.set("n" , "<leader>>" , ":resize +4<CR>")
-vim.keymap.set("n" , "<leader><" , ":resize -4<CR>")
-vim.keymap.set("n" , "<leader>+" , ":vertical resize +4<CR>")
-vim.keymap.set("n" , "<leader>-" , ":vertical resize -4<CR>")
+vim.keymap.set("n", "<leader>>", ":resize +4<CR>")
+vim.keymap.set("n", "<leader><", ":resize -4<CR>")
+vim.keymap.set("n", "<leader>+", ":vertical resize +4<CR>")
+vim.keymap.set("n", "<leader>-", ":vertical resize -4<CR>")
 
 --horizontal movements
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -37,7 +37,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- switch buffers
 vim.keymap.set("n", "<leader>.", ":bp<CR>")
 vim.keymap.set("n", "<leader>,", ":bn<CR>")
-
 
 -- highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
