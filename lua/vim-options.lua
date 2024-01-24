@@ -6,6 +6,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.scrolloff = 8
+vim.opt.ignorecase = true
+
 -- vim.opt.wrap = false
 
 -- move selected lines
@@ -27,6 +29,14 @@ vim.keymap.set("n" , "<leader>>" , ":resize +4<CR>")
 vim.keymap.set("n" , "<leader><" , ":resize -4<CR>")
 vim.keymap.set("n" , "<leader>+" , ":vertical resize +4<CR>")
 vim.keymap.set("n" , "<leader>-" , ":vertical resize -4<CR>")
+
+--horizontal movements
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- switch buffers
+vim.keymap.set("n", "<leader>.", ":bp<CR>")
+vim.keymap.set("n", "<leader>,", ":bn<CR>")
 
 
 -- highlight on yank

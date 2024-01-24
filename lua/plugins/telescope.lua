@@ -13,6 +13,7 @@ return {
 				"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git'}})<cr>",
 				{desc = "Advanced Find Files"}
 			)
+			vim.keymap.set("n" , "<leader>bf" , builtin.buffers , { desc = "Lists open buffers"})
 			require("telescope").setup({
 				defaults = {
 					file_ignore_patterns = {
