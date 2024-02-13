@@ -35,10 +35,9 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- switch buffers
-vim.keymap.set("n", "<leader>.", ":bp<CR>")
-vim.keymap.set("n", "<leader>,", ":bn<CR>")
+vim.keymap.set("n", "<leader>.", ":bn<CR>")
+vim.keymap.set("n", "<leader>,", ":bp<CR>")
 
--- highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
