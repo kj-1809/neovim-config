@@ -7,8 +7,15 @@ vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.scrolloff = 8
 vim.opt.ignorecase = true
-
 -- vim.opt.wrap = false
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  desc = "Disable automatic comment insertion",
+  group = vim.api.nvim_create_augroup("AutoComment", {}),
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end,
+})
 
 -- move selected lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

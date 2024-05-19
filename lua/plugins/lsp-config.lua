@@ -40,8 +40,12 @@ return {
 			lspconfig.clangd.setup({
 				capabilites = capabilities,
 				fallback_style = {
-					ColumnLimit = 300
-				}
+					ColumnLimit = 300,
+				},
+				cmd = {
+					"clangd",
+					"--offset-encoding=utf-16",
+				},
 			})
 			lspconfig.tsserver.setup({
 				capabilites = capabilities,
@@ -56,7 +60,7 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.cssls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -66,6 +70,7 @@ return {
 			vim.keymap.set("n", "<leader>e", ':lua vim.diagnostic.open_float(0, {scope="line"})<CR>', { silent = true })
 			vim.keymap.set("i", "<C-x>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 			vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols)
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 		end,
 	},
 }
