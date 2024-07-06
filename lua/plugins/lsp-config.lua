@@ -63,6 +63,27 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.taplo.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.dockerls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.docker_compose_language_service.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.intelephense.setup({
+				capabilities = capabilities,
+				settings = {
+					intelephense = {
+						files = {
+							maxSize = 5000000, -- Adjust this value as needed
+						},
+					},
+				},
+			})
+
+			lspconfig.gopls.setup({
 				capabilities = capabilities
 			})
 

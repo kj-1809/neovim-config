@@ -10,11 +10,11 @@ vim.opt.ignorecase = true
 -- vim.opt.wrap = false
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  desc = "Disable automatic comment insertion",
-  group = vim.api.nvim_create_augroup("AutoComment", {}),
-  callback = function()
-    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
-  end,
+	desc = "Disable automatic comment insertion",
+	group = vim.api.nvim_create_augroup("AutoComment", {}),
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+	end,
 })
 
 -- move selected lines
@@ -44,6 +44,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- switch buffers
 vim.keymap.set("n", "<leader>.", ":bn<CR>")
 vim.keymap.set("n", "<leader>,", ":bp<CR>")
+vim.keymap.set("n", "<leader>br", ':%bdelete|edit #|normal`"')
 
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
