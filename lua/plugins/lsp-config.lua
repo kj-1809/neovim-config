@@ -84,7 +84,14 @@ return {
 			})
 
 			lspconfig.gopls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
+			})
+			lspconfig.sqlls.setup({
+				capabilities = capabilities,
+				filetypes = { "sql" },
+				root_dir = function(_)
+					return vim.loop.cwd()
+				end,
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
