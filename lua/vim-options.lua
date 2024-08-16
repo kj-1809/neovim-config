@@ -38,8 +38,10 @@ vim.keymap.set("n", "<leader>+", ":vertical resize +4<CR>")
 vim.keymap.set("n", "<leader>-", ":vertical resize -4<CR>")
 
 --horizontal movements
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-d>", ":+10<CR>", { silent = true })
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-u>", ":-10<CR>")
 
 -- switch buffers
 vim.keymap.set("n", "<leader>.", ":bn<CR>")
